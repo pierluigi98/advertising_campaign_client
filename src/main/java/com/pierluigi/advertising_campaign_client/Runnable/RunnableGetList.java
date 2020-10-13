@@ -23,7 +23,7 @@ public class RunnableGetList implements Runnable{
     @Override
     public void run() {
 
-        String url = "http://localhost:8080/readWithLimit?limit="+this.limit;
+        String url = "http://10.172.65.33:8080/readWithLimit?limit="+this.limit;
         HttpHeaders requestHeaders = new HttpHeaders();
         requestHeaders.setBasicAuth("username","password");
         HttpEntity<Campaign> requestEntity = new HttpEntity<>(null,requestHeaders);

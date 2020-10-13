@@ -31,7 +31,7 @@ public class RunnableIncrement implements Runnable{
         //Spring boot starter logging è incluso già in starter web
         //System.currentTimeMillis();
 
-        String url = "http://localhost:8080/increment?id="+this.id+"&inc="+this.inc+"&cat="+this.category;
+        String url = "http://10.172.65.33:8080/increment?id="+this.id+"&inc="+this.inc+"&cat="+this.category;
         HttpHeaders requestHeaders = new HttpHeaders();
         requestHeaders.setBasicAuth("username","password");
         HttpEntity<Campaign> requestEntity = new HttpEntity<>(null,requestHeaders);
