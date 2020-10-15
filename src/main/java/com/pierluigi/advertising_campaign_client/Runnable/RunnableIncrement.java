@@ -19,7 +19,7 @@ public class RunnableIncrement implements Runnable{
 
     @Override
     public void run() {
-        RandomCampaign randomCampaign = new RandomCampaign();
+        RandomCampaignInterf randomCampaign = new RandomCampaign();
 
         String url = "http://localhost:8080/increment?id="+
                 randomCampaign.getCampaign().getIdCampaign()+

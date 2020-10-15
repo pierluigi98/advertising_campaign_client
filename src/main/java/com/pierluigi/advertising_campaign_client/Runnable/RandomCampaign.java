@@ -12,12 +12,12 @@ import org.springframework.web.client.RestTemplate;
 import java.util.List;
 import java.util.Random;
 
-public class RandomCampaign {
+public class RandomCampaign implements RandomCampaignInterf {
     private Random random = new Random();
 
     public RandomCampaign() {
     }
-
+    @Override
     public Campaign getCampaign()
     {
         String url ="http://localhost:8080/readAll";
@@ -37,11 +37,11 @@ public class RandomCampaign {
             return responseEntity.getBody().get(random.nextInt(responseEntity.getBody().size()));
         }
     }
-
+    @Override
     public Counter.Categories getCategory() {
         return Counter.Categories.values()[random.nextInt(Counter.Categories.values().length)];
     }
-
+    @Override
     public int getIncrement() {
         return random.nextInt(100);
     }
